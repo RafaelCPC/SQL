@@ -1,0 +1,55 @@
+Ejercicio 1
+
+[{"Como_se_ha_hecho":"CREATE TABLE Books (book_id INTEGER PRIMARY KEY, title TEXT, author TEXT, genre TEXT, published_year DATE,isbn INT,price INT,rating INT,stock_count INT)", "book_id":1,"title":"STORMLIGHT ARCHIVE","author":"Brandon Sanderson","genre":"Fantasy","published_year":2005,"isbn":123123123,"price":29.99,"rating":10,"stock_count":3}]
+
+Ejercicio 2
+
+[{"Como_se_ha_hecho":"ALTER TABLE Books Add COLUMN Publiser TEXT Add COLUMN Number_Page INT","book_id":1,"title":"STORMLIGHT ARCHIVE","author":"Brandon Sanderson","genre":"Fantasy","published_year":2005,"isbn":123123123,"price":29.99,"rating":10,"stock_count":3,"Publiser":"Nova","Number_Page":1237}]
+
+Ejercicio 3
+
+[{"Como_se_ha_hecho":"INSERT INTO Books VALUES (2, A Journey to the Center, Jules Verne, Adventure,1864,1234567890123,12.99, 4.5,10,Verne Publishing,350)","book_id":1,"title":"STORMLIGHT ARCHIVE","author":"Brandon Sanderson","genre":"Fantasy","published_year":2005,"isbn":123123123,"price":29.99,"rating":10,"stock_count":3,"Publiser":"Nova","Number_Page":1237},{"book_id":2,"title":"A Journey to the Center","author":"Jules Verne","genre":"Adventure","published_year":1864,"isbn":1234567890123,"price":12.99,"rating":4.5,"stock_count":10,"Publiser":"Verne Publishing","Number_Page":350},{"book_id":3,"title":"War and Peace","author":"Leo Tolstoy","genre":"Historical","published_year":1869,"isbn":1234567890124,"price":14.99,"rating":4.8,"stock_count":5,"Publiser":"Tolstoy Prints","Number_Page":1200},{"book_id":4,"title":"Whispers of the Wind","author":"Amelia Blackburn","genre":"Romance","published_year":1982,"isbn":1234567890125,"price":9.99,"rating":4.2,"stock_count":20,"Publiser":"Blackburn House","Number_Page":275},{"book_id":5,"title":"The Galactic Odyssey","author":"Orion Starfield","genre":"Science Fiction","published_year":2005,"isbn":1234567890126,"price":19.99,"rating":4.9,"stock_count":15,"Publiser":"Nebula Press","Number_Page":450}]
+
+Ejercicio 4
+
+[{"Como_se_ha_hecho":"UPDATE Books SET stock_count=4, price=10.99 WHERE book_id=3","book_id":1,"title":"STORMLIGHT ARCHIVE","author":"Brandon Sanderson","genre":"Fantasy","published_year":2005,"isbn":123123123,"price":29.99,"rating":10,"stock_count":3,"Publiser":"Nova","Number_Page":1237},{"book_id":2,"title":"A Journey to the Center","author":"Jules Verne","genre":"Adventure","published_year":1864,"isbn":1234567890123,"price":12.99,"rating":4.5,"stock_count":10,"Publiser":"Verne Publishing","Number_Page":350},{"book_id":3,"title":"War and Peace","author":"Leo Tolstoy","genre":"Historical","published_year":1869,"isbn":1234567890124,"price":10.99,"rating":4.8,"stock_count":4,"Publiser":"Tolstoy Prints","Number_Page":1200},{"book_id":4,"title":"Whispers of the Wind","author":"Amelia Blackburn","genre":"Romance","published_year":1982,"isbn":1234567890125,"price":9.99,"rating":4.2,"stock_count":20,"Publiser":"Blackburn House","Number_Page":275},{"book_id":5,"title":"The Galactic Odyssey","author":"Orion Starfield","genre":"Science Fiction","published_year":2005,"isbn":1234567890126,"price":19.99,"rating":4.9,"stock_count":15,"Publiser":"Nebula Press","Number_Page":450}]
+
+Ejercicio 5
+
+GRANT SELECT,UPDATE, INSERT, DELETE ON Books to “martin”@”localhost”
+
+Ejercicio 6
+
+REVOKE UPDATE, INSERT, DELETE ON Books to “martin”@”localhost”
+
+Ejercicio 7
+
+BEGIN TRANSACTION;
+DELETE FROM Books WHERE book_id =101;
+COMMIT;
+
+Ejercicio 8
+
+BEGIN TRANSACTION;
+SAVEPOINT SP1;
+DELETE FROM Books WHERE book_id =103;
+ROLLBACK TO SP1;
+COMMIT;
+
+Ejercicio 9
+
+1-
+SELECT * FROM tested
+WHERE c5 = "female" AND c6 > "30"
+2-
+SELECT * FROM tested
+WHERE c5 = "male" AND c1 = 1
+3-
+SELECT * FROM tested
+WHERE C12 ="C" AND c3 = 3 
+4-
+SELECT * FROM tested
+WHERE c2 = 1 AND c3 = 1
+5-
+SELECT * FROM tested
+WHERE c12 = "C" AND c3 = 2
